@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <form action="/users/account/forgot/reset/<%= forgotToken %>" method="POST">
+        <div class="form-group">
+            <label for="password">New Password</label>
+            <input type="password" class="form-control" name="password">
+        </div>
+          <button type="submit" class="btn btn-dark">reset</button>
+    </form>
+  </body>
+</html>
