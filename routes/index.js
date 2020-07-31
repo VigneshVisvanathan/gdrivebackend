@@ -6,7 +6,7 @@ const { openDelimiter } = require('ejs');
  
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  getFiles();
+  //getFiles();
   // uploadFile()
   res.render('index', { title: 'Express' });
 });
