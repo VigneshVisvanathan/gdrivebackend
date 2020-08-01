@@ -63,7 +63,8 @@ s3.upload(params, (err, data) => {
  
 exports.listKeyNames = (req, res) => {
   const params = {
-    Bucket: BUCKET_NAME
+    Bucket: BUCKET_NAME,
+    Delimiter:'/',
   }
  
   var keys = [];
