@@ -5,8 +5,9 @@ var bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 var mailer = require('../utils/mailer');
 var crypto = require('crypto');
-var {uploadFile,getFiles} = require('../library/upload');
-
+// var {uploadFile,getFiles} = require('../library/upload');
+let upload = require('../library/multer.config');
+const awsWorker = require('../library/upload');
 
 /* GET users listing. */
 router.post("/register", async function (req, res, next) {
@@ -231,10 +232,13 @@ router.post("/account/forgot/reset/:forgotToken", function (req, res, next) {
 })
 });
     
+router.post('/api/files/upload', upload.single("file"), awsWorker.doUpload);
+ 
+router.get('/api/files/all', awsWorker.listKeyNames);
+ 
+router.get('/api/files/:filename', awsWorker.doDownload);
 
 
-
-      
         
       
       
