@@ -32,7 +32,7 @@ router.post("/register", async function (req, res, next) {
         
         // Set expiration time is 24 hours.
         user.activeExpires = Date.now() + 24 * 3600 * 1000;
-            var link = 'http://localhost:7000/users/account/active/'
+            var link = 'https://hellogdrive.herokuapp.com/users/account/active/'
                        + user.activeToken;
               
             // Sending activation email
@@ -116,7 +116,7 @@ router.post("/forgot", async function (req, res) {
         
         // Set expiration time is 24 hours.
         user.forgotExpires = Date.now() + 24 * 3600 * 1000;
-            var link = 'http://localhost:7000/users/account/forgot/'
+            var link = 'https://hellogdrive.herokuapp.com/users/account/forgot/'
                        + user.forgotToken;
               
             // Sending activation email
